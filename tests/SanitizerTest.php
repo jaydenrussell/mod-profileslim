@@ -18,13 +18,13 @@ class SanitizerTest extends TestCase
     public static function avatarProvider()
     {
         return [
-            'flat filename'            => ['normal.jpg', '/images/comprofiler/normal.jpg'],
-            'cb-style filename'        => ['383_abc.jpg', '/images/comprofiler/383_abc.jpg'],
+            'flat filename'            => ['normal.jpg', '/images/normal.jpg'],
+            'cb-style filename'        => ['383_abc.jpg', '/images/383_abc.jpg'],
             'protocol-relative'        => ['//evil.com/x', ''],
             'http scheme'              => ['http://evil.com/x', ''],
             'javascript scheme'        => ['javascript:alert(1)', ''],
             'path traversal'           => ['../../etc/passwd', ''],
-            'subdirectory'             => ['sub/dir/x.png', '/images/comprofiler/sub/dir/x.png'],
+            'subdirectory'             => ['sub/dir/x.png', '/images/sub/dir/x.png'],
             'space in name'            => ['a b.jpg', ''],
             'backslash'                => ['c:\\x', ''],
             'empty'                    => ['', ''],
@@ -45,11 +45,19 @@ class SanitizerTest extends TestCase
      * reflection so its unit tests can run without weakening the shipped
      * class's encapsulation (the method stays private in production).
      */
-    private static function sanitizeAvatar($raw)
+    private static function sanitizeAvatar($raw, $basePath = '/images/')
     {
         $rm = new \ReflectionMethod('ModProfileSlimHelper', 'sanitizeAvatarUrl');
         $rm->setAccessible(true);
-        return $rm->invoke(null, $raw);
+        return $rm->invoke(null, $raw, $basePath);
+    }
+
+    public function testSanitizeAvatarUrlCustomBase()
+    {
+        // Custom base is prefixed; an already-based path is not doubled.
+        $this->assertSame('/images/comprofiler/383_abc.jpg', self::sanitizeAvatar('383_abc.jpg', '/images/comprofiler/'));
+        $this->assertSame('/images/comprofiler/383_abc.jpg', self::sanitizeAvatar('/images/comprofiler/383_abc.jpg', '/images/comprofiler/'));
+        $this->assertSame('', self::sanitizeAvatar('https://evil.com/x.jpg', '/images/comprofiler/'));
     }
 
     // ---- Profile URL validator (MEDIUM fix regression) ----
