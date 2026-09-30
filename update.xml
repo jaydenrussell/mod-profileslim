@@ -11,12 +11,12 @@
 		<element>mod_profileslim</element>
 		<type>module</type>
 		<client>site</client>
-		<version>1.10.0</version>
+		<version>1.10.1</version>
 		<author>Jayden Russell</author>
 		<date>September 2026</date>
 		<infourl>https://github.com/jaydenrussell/mod-profileslim</infourl>
-		<downloadurl>https://github.com/jaydenrussell/mod-profileslim/releases/download/v1.10.0/mod_profileslim.zip</downloadurl>
-		<sha256>D3AF2B162ADE226FD7743BBC5943EB767F1DB3079CD19AF160E7F229983A3ECF</sha256>
+		<downloadurl>https://github.com/jaydenrussell/mod-profileslim/releases/download/v1.10.1/mod_profileslim.zip</downloadurl>
+		<sha256>AD4598A25769E8005926CA15785CAAAFFEE0C9374963AF09CFF5EEB5F1B84DF1</sha256>
 		<targetplatform name="joomla" version="3.[0-9]+" />
 		<php_minimum>7.4.0</php_minimum>
 	</update>
