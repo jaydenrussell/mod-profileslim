@@ -407,7 +407,7 @@ class ModProfileSlimHelper
         }
 
         try {
-            include_once @$cbFoundation;
+            include_once $cbFoundation;
         } catch (\Throwable $e) {
             self::log('cbFoundation include failed: ' . $e->getMessage());
         }
