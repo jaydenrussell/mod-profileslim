@@ -16,7 +16,7 @@
 		<date>September 2026</date>
 		<infourl>https://github.com/jaydenrussell/mod-profileslim</infourl>
 		<downloadurl>https://github.com/jaydenrussell/mod-profileslim/releases/download/v1.10.0/mod_profileslim.zip</downloadurl>
-		<sha256>8C9C666E1ABEA50F3B0C079A857082868E51092C3637D6D57577241A105F6D28</sha256>
+		<sha256>BFDA473AA15D28CF4D8221C46CC75B78787E12C18EBC9F9D01ECD2A3E1DA9350</sha256>
 		<targetplatform name="joomla" version="3.[0-9]+" />
 		<php_minimum>7.4.0</php_minimum>
 	</update>
