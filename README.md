@@ -25,9 +25,6 @@ depending on another profile extension being loaded on the page.
    such as `tpl_jdseattle`).
 3. Clear Joomla cache.
 
-> **Upgrading from `mod_cbprofileslim` (v1.9.2 and earlier)?** See
-> "[Upgrading](#upgrading-from-mod_cbprofileslim)" below — it is non-breaking.
-
 ## How the avatar works
 
 - **Joomla profile system (default).** The avatar comes from the `avatar` profile field
