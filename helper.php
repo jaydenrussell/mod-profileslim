@@ -2,7 +2,7 @@
 /**
  * @package     mod_profileslim
  * @subpackage  Joomla Profile Slim Display
- * @version     1.10.0
+ * @version     1.10.1
  */
 defined('_JEXEC') or die;
 
