@@ -9,7 +9,7 @@
  * (CB is a compatibility layer, never a requirement).
  * Top-level try/catch prevents any error from becoming a 500.
  *
- * @version 1.10.0
+ * @version 1.10.1
  */
 defined('_JEXEC') or die;
 
@@ -41,8 +41,8 @@ if (ModProfileSlimHelper::isCbInstalled() && is_file(__DIR__ . '/cbmenu.php')) {
         try {
             $resolverRefl = new \ReflectionClass('SccCbMenuResolver');
             $loadedVer   = $resolverRefl->hasConstant('VERSION') ? (string) $resolverRefl->getConstant('VERSION') : 'unknown';
-            if ($loadedVer !== '1.10.0') {
-                Log::add('mod_profileslim: loaded SccCbMenuResolver version ' . $loadedVer . ' (expected 1.10.0)', Log::WARNING, 'mod_profileslim');
+            if ($loadedVer !== '1.10.1') {
+                Log::add('mod_profileslim: loaded SccCbMenuResolver version ' . $loadedVer . ' (expected 1.10.1)', Log::WARNING, 'mod_profileslim');
             }
         } catch (\Throwable $e) {
         }
