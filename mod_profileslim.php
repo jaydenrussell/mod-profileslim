@@ -89,9 +89,7 @@ switch ($avatarAlign) {
 }
 
 $doc = Factory::getDocument();
-$cssUrl = \Joomla\CMS\Uri\Uri::base() . 'modules/mod_profileslim/css/profile-slim.css';
-$doc->addStylesheet($cssUrl);
-$doc->addCustomTag('<link rel="preload" href="' . htmlspecialchars($cssUrl, ENT_QUOTES, 'UTF-8') . '" as="style" type="text/css" onerror="this.onerror=null;this.rel=\'stylesheet\'">');
+$doc->addStylesheet(\Joomla\CMS\Uri\Uri::base() . 'modules/mod_profileslim/css/profile-slim.css');
 
 ?>
 <div id="ps-header" style="
