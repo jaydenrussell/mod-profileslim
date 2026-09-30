@@ -65,6 +65,7 @@ in the feed.
 
 | Version | Notes |
 |---------|-------|
+| 1.10.1 | Patch release so the updater detects it; avatar layout-shift fix, manifest Joomla 3.1 target, resolver version sync |
 | 1.10.0 | Fresh start under the `mod_profileslim` element: the module is explicitly a native Joomla extension with optional Community Builder awareness, and prior `mod_cbprofileslim` releases were removed from the repository alongside the rename |
 
 ## License
