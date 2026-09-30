@@ -194,5 +194,27 @@ namespace {
                 ModProfileSlimHelper::validateCss('expression(alert(1))')
             );
         }
+
+        public function testVersionIsConsistentAcrossManifestResolverAndGuard()
+        {
+            // The updater only offers strictly newer versions, and the
+            // entry-point skew guard warns on any mismatch — so manifest,
+            // resolver, and guard must always agree.
+            $manifest = simplexml_load_file(__DIR__ . '/../mod_profileslim.xml');
+            $this->assertNotFalse($manifest);
+            $manifestVersion = (string) $manifest->version;
+            $this->assertNotEmpty($manifestVersion);
+
+            require_once __DIR__ . '/../cbmenu.php';
+            $this->assertTrue(class_exists('SccCbMenuResolver'));
+            $this->assertSame($manifestVersion, SccCbMenuResolver::VERSION);
+
+            $entry = file_get_contents(__DIR__ . '/../mod_profileslim.php');
+            $this->assertNotFalse($entry);
+            $this->assertMatchesRegularExpression(
+                "/loadedVer !== '" . preg_quote($manifestVersion, '/') . "'/",
+                $entry
+            );
+        }
     }
 }
