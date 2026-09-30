@@ -12,7 +12,7 @@
  * Collision-safe: the class_exists() guard lets multiple packages ship this
  * file without redefining the class.
  *
- * @version 1.10.0
+ * @version 1.10.1
  */
 defined('_JEXEC') or die;
 
@@ -21,7 +21,7 @@ if (!class_exists('SccCbMenuResolver'))
 class SccCbMenuResolver
 {
 	/** Shipped resolver version for collision/version-skew diagnostics. */
-	const VERSION = '1.10.0';
+	const VERSION = '1.10.1';
 
 	protected static $instance = null;
 
