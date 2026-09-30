@@ -103,7 +103,7 @@ $doc->addStylesheet(\Joomla\CMS\Uri\Uri::base() . 'modules/mod_profileslim/css/p
     <?php if ($displayName): ?><span class="ps-name"><?php echo htmlspecialchars($displayName, ENT_QUOTES, 'UTF-8'); ?></span><?php endif; ?>
     <span class="ps-avatar-wrap">
       <?php if ($avatarUrl): ?>
-      <img src="<?php echo htmlspecialchars($avatarUrl, ENT_QUOTES, 'UTF-8'); ?>" alt="<?php echo htmlspecialchars($displayName, ENT_QUOTES, 'UTF-8'); ?>" class="ps-avatar" />
+      <img src="<?php echo htmlspecialchars($avatarUrl, ENT_QUOTES, 'UTF-8'); ?>" alt="<?php echo htmlspecialchars($displayName, ENT_QUOTES, 'UTF-8'); ?>" class="ps-avatar" width="<?php echo (int) $avatarSize; ?>" height="<?php echo (int) $avatarSize; ?>" />
       <?php endif; ?>
     </span>
   </a>
