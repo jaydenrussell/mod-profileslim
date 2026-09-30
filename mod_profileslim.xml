@@ -5,7 +5,7 @@
 	<creationDate>September 2026</creationDate>
 	<copyright>Copyright (C) 2026 Simcoe Curling Club</copyright>
 	<license>GNU General Public License v2 or later</license>
-	<version>1.10.0</version>
+	<version>1.10.1</version>
 	<description>Standalone Joomla module: displays the logged-in user's display name and avatar in the top header navbar using Joomla's built-in profile system. Optional Community Builder awareness — when CB is installed the profile link follows CB's canonical View Profile menu item.</description>
 	<updateservers>
 		<server type="extension" name="Joomla Profile Slim Display Update" priority="1">https://raw.githubusercontent.com/jaydenrussell/mod-profileslim/master/update.xml</server>
